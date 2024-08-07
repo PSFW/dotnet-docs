@@ -2,12 +2,16 @@
 .dockerignore
 .gitignore
 
+### `.configurations` folder
+configuration.dsc.yaml - (Can also be JSON) WinGet Desired State Configuration file, this can install OS-level dependencies like NodeJS and Visual Studio. This file can also reference the `.vsconfig` file to install extensions and workloads required.
 
+ToDo: Be nice to split this out i.e. development dependencies VS runtime dependencies
+ToDo: Be nice to use `global.json` to install SDK version. 
 ### `.devcontainer` folder
-devcontainer.json
+devcontainer.json - Reference a particular Dockerfile or service within docker-compose.
 
 files.exclude - exclude files from a workspace
-workspace.code-workspace - open specific folders for a workspace
+`.code-workspace` file - (`<any-nane>.code-workspace`) open specific folders for a workspace, this is helpful to open multiple workspaces at once. This may be necessary as workspaces may need to have different `VS Code` settings.
 
 ### src folder
 Directory.Build.props
@@ -22,6 +26,7 @@ Company.ruleset
 config.json file - related to `.http` file (same directory)
 vars.json file - related to `.http` file (same directory)
 
+Dockerfile - Can reference `configuration.dsc.yaml` (even on Linux) to setup the environment within a container.
 docker-compose.dcproj
 docker-compose.yml
 
@@ -33,6 +38,7 @@ docker-compose.yml
 
 packages.lock.json
 
+shproj - project file for sharing code files that can be added to other projects, without being part of a standalone assembly at compile-time
 esproj - project file for react, angular, vite and other JavaScript-based project types
 slnf - Solution filter file (for selecting projects within a solution without adding all of them)
 .vsconfig - Holds Visual Studio extensions and workflow information. The Visual Studio Installer is able to emit this file. Adding this file to the same directory as the solution will prompt the user to install the extensions and components.

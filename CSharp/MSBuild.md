@@ -1,3 +1,17 @@
+## Directory.Build.props
+### `Choose` Element
+The `Choose` Element exists to allow 'switching' on multiple conditions.
+```xml
+  <Choose>
+    <When Condition="'$(OS)' == 'Windows_NT'">
+      <PropertyGroup>
+        <IsWindows>true</IsWindows>
+      </PropertyGroup>
+    </When>
+  </Choose>
+```
+[Reference to Sonarr projects Directory.Build.props file]()
+
 
 ## Directory.Build.targets
 ```xml
@@ -58,7 +72,7 @@ This is different to a `Directory.Build.props` file in that it allows you to opt
 `CentralPackageTransitivePinningEnabled`true
 `CentralPackageVersionOverrideEnabled`false
 
-Note: multiple package sources results in a restore warning, you will need to add packageSourceMappings for each source. (nuget.org can have *, other sources can have a pattern that matches more explicitly)
+Note: Multiple package sources result in a restore warning, you will need to add packageSourceMappings for each source. (nuget.org can have *, other sources can have a pattern that matches more explicitly)
 
 This warning caused problems, this is not simple to setup, potentially is has a bug.
 
