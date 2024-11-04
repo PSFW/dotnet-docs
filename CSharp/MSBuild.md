@@ -17,7 +17,7 @@ The `Choose` Element exists to allow 'switching' on multiple conditions.
 ```xml
 <Project>
     <PropertyGroup>
-        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Unily.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Company.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <IsLibrary Condition="'$(IsLibrary)' == ''">true</IsLibrary>
         <NoWarn Condition="'$(IsLibrary)' == 'false'">VSTHRD111</NoWarn>
